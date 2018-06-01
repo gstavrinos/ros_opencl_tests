@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_opencl_tests</name>
+  <version>0.0.0</version>
+  <description>The ros_opencl_tests package</description>
+
+  <maintainer email="gstavrinos@itt.demokritos.gr">George Stavrinos</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>ros_opencl</depend>
+  <depend>sensor_msgs</depend>
+
+
+  <export>
+  </export>
+</package>
