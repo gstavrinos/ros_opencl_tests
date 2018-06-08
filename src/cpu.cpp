@@ -9,7 +9,7 @@ void callback (const sensor_msgs::Image& msg){
     if (prev_msg.data.size() > 0){
         sensor_msgs::Image result = sensor_msgs::Image(msg);
         for(int i = 0; i < msg.data.size(); i+=3){
-            unsigned sum[3] = {0, 0, 0};
+            unsigned sum[3] = {result.data[i], result.data[i+1], result.data[i+2]};
             unsigned cnt = 1;
             if((int)(i - msg.step) >= 0){
                 sum[0] += msg.data[i-msg.step];
@@ -59,9 +59,9 @@ void callback (const sensor_msgs::Image& msg){
                 sum[2] += msg.data[i+2+3];
                 cnt++;
             }
-            result.data[i] = (msg.data[i] + sum[0]) / cnt;
-            result.data[i+1] = (msg.data[i+1] + sum[1]) / cnt;
-            result.data[i+2] = (msg.data[i+2] + sum[2]) / cnt;
+            result.data[i] = sum[0] / cnt;
+            result.data[i+1] = sum[1] / cnt;
+            result.data[i+2] = sum[2] / cnt;
         }
         pub.publish(result);
     }
