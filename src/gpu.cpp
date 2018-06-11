@@ -6,18 +6,20 @@
 
 ros::Publisher pub;
 ros_opencl::ROS_OpenCL roscl;
-sensor_msgs::Image prev_msg;
 
 void callback (const sensor_msgs::Image& msg){
-    if (prev_msg.data.size() > 0){
-        sensor_msgs::Image result = sensor_msgs::Image(msg);
-        std::vector<char> v(msg.data.begin(), msg.data.end());
-        std::vector<char> v2(prev_msg.data.begin(), prev_msg.data.end());
-        roscl.process(&v, v2);
-        result.data.assign(v.begin(), v.end());
-        pub.publish(result);
-    }
-    prev_msg = msg;
+    sensor_msgs::Image result = sensor_msgs::Image(msg);
+    std::vector<int> v(msg.data.begin(), msg.data.end());
+    // Adding a copy of the vector to have the original image too
+    v.insert(v.end(), msg.data.begin(), msg.data.end());
+    std::vector<int> v2;
+    v2.push_back(msg.step);
+    v2.push_back(msg.data.size());
+    ROS_OpenCL_Params rop;
+    rop.global_work_size.push_back(msg.data.size() / 3);
+    roscl.process(&v, v2, &rop);
+    result.data.assign(v.begin(), v.begin()+msg.data.size());
+    pub.publish(result);
 }
 
 int main (int argc, char** argv){
