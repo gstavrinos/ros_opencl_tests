@@ -5,6 +5,7 @@
 #include <ros_opencl/ros_opencl.hpp>
 
 ros::Publisher pub;
+int blur_radius;
 ros_opencl::ROS_OpenCL roscl;
 
 void callback (const sensor_msgs::Image& msg){
@@ -15,6 +16,7 @@ void callback (const sensor_msgs::Image& msg){
     std::vector<int> v2;
     v2.push_back(msg.step);
     v2.push_back(msg.data.size());
+    v2.push_back(blur_radius);
     ROS_OpenCL_Params rop;
     rop.global_work_size.push_back(msg.data.size() / 3);
     roscl.process(&v, v2, &rop);
@@ -29,6 +31,7 @@ int main (int argc, char** argv){
     std::string result_topic;
     nh.param("ros_opencl_tests_gpu/in_topic", in_topic, std::string("/usb_cam/image_raw"));
     nh.param("ros_opencl_tests_gpu/result_topic", result_topic, std::string("ros_opencl_tests_gpu/result"));
+    nh.param("ros_opencl_tests_gpu/blur_radius", blur_radius, 5);
     std::string full_kernel_path = ros::package::getPath("ros_opencl_tests") + "/kernels/kernel.cl";
     roscl = new ros_opencl::ROS_OpenCL(full_kernel_path, "imageProc");
     pub = nh.advertise<sensor_msgs::Image>(result_topic, 1);
