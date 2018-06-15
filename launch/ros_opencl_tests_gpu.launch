@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+    <node pkg="ros_opencl_tests" type="gpu_side" respawn="false" name="ros_opencl_tests_gpu" output="screen">
+        <rosparam file="$(find ros_opencl_tests)/config/gpu.yaml" command="load" />
+    </node>
+</launch>

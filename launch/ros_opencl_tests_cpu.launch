@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+    <node pkg="ros_opencl_tests" type="cpu_side" respawn="false" name="ros_opencl_tests_cpu" output="screen">
+        <rosparam file="$(find ros_opencl_tests)/config/cpu.yaml" command="load" />
+    </node>
+</launch>
