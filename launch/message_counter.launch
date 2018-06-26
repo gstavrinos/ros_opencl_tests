@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+    <node pkg="ros_opencl_tests" type="message_counter.py" respawn="false" name="message_counter" output="screen">
+        <rosparam file="$(find ros_opencl_tests)/config/message_counter.yaml" command="load" />
+    </node>
+</launch>

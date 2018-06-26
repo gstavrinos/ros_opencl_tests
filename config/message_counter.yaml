@@ -1,0 +1,3 @@
+input_topics: ["/usb_cam/image_raw", "/ros_opencl_tests_cpu/result", "/ros_opencl_tests_gpu/result", "ros_opencl_tests_gpu_without_ros_opencl/result"]
+print_running_results: False
+run_for_secs: 120

@@ -1,3 +1,3 @@
 in_topic: "/usb_cam/image_raw"
 result_topic: "ros_opencl_tests_gpu/result"
-blur_radius: 5
+blur_radius: 50

@@ -1,0 +1,70 @@
+Specs:
+CPU: i7-4790K CPU @ 4.00GHz
+RAM: 16GB
+GPU: NVidia GeForce GTX 960
+VRAM: 2GB
+
+blur_radius = 5
+---
+/ros_opencl_tests_cpu/result : 1138
+/ros_opencl_tests_gpu/result : 2178
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2553
+
+blur_radius = 10
+---
+/ros_opencl_tests_cpu/result : 648
+/ros_opencl_tests_gpu/result : 1976
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2012
+
+blur_radius = 15
+---
+/ros_opencl_tests_cpu/result : 445
+/ros_opencl_tests_gpu/result : 2093
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2046
+
+blur_radius = 20
+---
+/ros_opencl_tests_cpu/result : 339
+/ros_opencl_tests_gpu/result : 2267
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2022
+
+blur_radius = 25
+---
+/ros_opencl_tests_cpu/result : 275
+/ros_opencl_tests_gpu/result : 2272
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2327
+
+blur_radius = 30
+---
+/ros_opencl_tests_cpu/result : 227
+/ros_opencl_tests_gpu/result : 2368
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2078
+
+blur_radius = 35
+---
+/ros_opencl_tests_cpu/result : 196
+/ros_opencl_tests_gpu/result : 2353
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2079
+
+blur_radius = 40
+---
+/ros_opencl_tests_cpu/result : 174
+/ros_opencl_tests_gpu/result : 2299
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2072
+
+blur_radius = 50
+---
+/ros_opencl_tests_cpu/result : 135
+/ros_opencl_tests_gpu/result : 2193
+/ros_opencl_tests_gpu_without_ros_opencl/result : 2158
+
+
+
+
+==================================================================
+blur_radius = 50 (all running simultaneously)
+---
+Topic name: /usb_cam/image_raw : 3550
+Topic name: /ros_opencl_tests_cpu/result : 99
+Topic name: /ros_opencl_tests_gpu/result : 3522
+Topic name: ros_opencl_tests_gpu_without_ros_opencl/result : 3527
