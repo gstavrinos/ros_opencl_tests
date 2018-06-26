@@ -8,7 +8,10 @@ find_package(catkin REQUIRED COMPONENTS
     sensor_msgs
 )
 
-include_directories(${catkin_INCLUDE_DIRS})
+include_directories(
+    ${catkin_INCLUDE_DIRS}
+    ${OpenCL_INCLUDE_DIRS}
+)
 
 catkin_package()
 
@@ -17,6 +20,9 @@ target_link_libraries(cpu_side ${catkin_LIBRARIES})
 
 add_executable(gpu_side src/gpu.cpp)
 target_link_libraries(gpu_side ${catkin_LIBRARIES})
+
+add_executable(gpu_side_without_ros_opencl src/gpu_without_ros_opencl.cpp)
+target_link_libraries(gpu_side_without_ros_opencl ${catkin_LIBRARIES} ${OpenCL_LIBRARIES})
 
 # add_executable(compare src/compare.cpp)
 # target_link_libraries(compare ${catkin_LIBRARIES})
