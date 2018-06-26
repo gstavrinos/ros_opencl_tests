@@ -2,7 +2,7 @@ kernel void imageProc(global int* v, global int* v2){
     unsigned int i = get_global_id(0) * 3;
     unsigned int sum[3] = {v[v2[1]+i], v[v2[1]+i+1], v[v2[1]+i+2]};
     unsigned int cnt = 1;
-    for(unsigned b = 0; b < 10; b++){
+    for(unsigned b = 0; b < v2[2]; b++){
         if((int)(i - b*v2[0]) >= 0){
             sum[0] += v[v2[1]+i-b*v2[0]];
             sum[1] += v[v2[1]+i+1-b*v2[0]];
