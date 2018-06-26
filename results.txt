@@ -3,7 +3,13 @@ CPU: i7-4790K CPU @ 4.00GHz
 RAM: 16GB
 GPU: NVidia GeForce GTX 960
 VRAM: 2GB
+----------------------------
 
+============================
+Test conditions: 2 mins/node
+============================
+
+--------------------------------------------------------
 blur_radius = 5
 ---
 /ros_opencl_tests_cpu/result : 1138
@@ -57,6 +63,7 @@ blur_radius = 50
 /ros_opencl_tests_cpu/result : 135
 /ros_opencl_tests_gpu/result : 2193
 /ros_opencl_tests_gpu_without_ros_opencl/result : 2158
+--------------------------------------------------------
 
 
 
