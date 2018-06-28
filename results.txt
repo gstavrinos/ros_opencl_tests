@@ -66,8 +66,6 @@ blur_radius = 50
 --------------------------------------------------------
 
 
-
-
 ==================================================================
 blur_radius = 50 (all running simultaneously)
 ---
@@ -75,3 +73,61 @@ Topic name: /usb_cam/image_raw : 3550
 Topic name: /ros_opencl_tests_cpu/result : 99
 Topic name: /ros_opencl_tests_gpu/result : 3522
 Topic name: ros_opencl_tests_gpu_without_ros_opencl/result : 3527
+
+
+
+
+============================
+Test conditions: 5 mins/node
+============================
+
+--------------------------------------------------------
+blur_radius = 5
+---
+ /usb_cam/image_raw : 8996
+/ros_opencl_tests_cpu/result : 2376
+/ros_opencl_tests_gpu/result : 8996
+/ros_opencl_tests_gpu_without_ros_opencl/result : 8994
+
+blur_radius = 15
+---
+ /usb_cam/image_raw : 8997
+/ros_opencl_tests_cpu/result : 787
+/ros_opencl_tests_gpu/result : 8996
+/ros_opencl_tests_gpu_without_ros_opencl/result : 8996
+
+blur_radius = 25
+---
+ /usb_cam/image_raw : 8997
+/ros_opencl_tests_cpu/result : 445
+/ros_opencl_tests_gpu/result : 8996
+/ros_opencl_tests_gpu_without_ros_opencl/result : 8997
+
+blur_radius = 35
+---
+ /usb_cam/image_raw : 8996
+/ros_opencl_tests_cpu/result : 313
+/ros_opencl_tests_gpu/result : 8988
+/ros_opencl_tests_gpu_without_ros_opencl/result : 8989
+
+blur_radius = 45
+---
+ /usb_cam/image_raw : 8996
+/ros_opencl_tests_cpu/result : 250
+/ros_opencl_tests_gpu/result : 8855
+/ros_opencl_tests_gpu_without_ros_opencl/result : 8885
+
+blur_radius = 55
+---
+ /usb_cam/image_raw : 8997
+/ros_opencl_tests_cpu/result : 204
+/ros_opencl_tests_gpu/result : 8440
+/ros_opencl_tests_gpu_without_ros_opencl/result : 8463
+
+blur_radius = 65
+---
+ /usb_cam/image_raw : 8997
+/ros_opencl_tests_cpu/result : 185
+/ros_opencl_tests_gpu/result : 8229
+/ros_opencl_tests_gpu_without_ros_opencl/result : 8228
+--------------------------------------------------------
